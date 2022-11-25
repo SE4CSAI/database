@@ -10,7 +10,7 @@ def upload_image(file : UploadFile = File(...)):
     try:
         contents = file.file.read()
         suffix = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-        with open(file.filename +'_' + suffix, 'wb') as f:
+        with open(file.filename +'_' + suffix + '.jpg', 'wb') as f:
             f.write(contents)
     except Exception:
         return {"message" : "There was an error uploading the file"}
